@@ -13,17 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EtudiantController {
 
     @Autowired
-    private EtudiantService etudiantService ;
-    private EtudiantServiceImp etudiantServiceImp ;
+    private EtudiantService etudiantService;
+    private EtudiantServiceImp etudiantServiceImp;
 
     public EtudiantController(EtudiantService etudiantService) {
         this.etudiantService = etudiantService;
     }
 
     @GetMapping("Etudiant")
-    public String listEtudiant(Model model){
-        model.addAttribute("listEtud" , etudiantService.getAll());
+    public String listEtudiant(Model model) {
+        model.addAttribute("listEtud", etudiantService.getAll());
         System.out.println(etudiantService.getAll());
         return "etudiants";
     }
+
+    // C'est la modification pour ltp devops
 }
