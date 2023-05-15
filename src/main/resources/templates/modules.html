@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Student Management System</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Gestion des notes</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/#}">Back home</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class ="container">
+  <div class = "row">
+    <h1> List des Filieres </h1>
+  </div>
+
+  <table class = "table table-striped table-bordered">
+    <thead class = "table-dark">
+    <tr>
+      <th> Nom des Modules </th>
+      <th> Semester</th>
+<!--      <th> Options</th>-->
+    </tr>
+    </thead>
+
+    <tbody>
+      <tr th:each = "module : ${listModule}">
+        <td th:text = "${module.nom}"></td>
+        <td th:text = "${module.semester}"></td>
+<!--        <td> <a th:href="@{/showFormForUpdate/{id}(id=${professeur.id})}"-->
+<!--                class="btn btn-primary">Update</a>-->
+<!--          <a th:href="@{/deleteEmployee/{id}(id=${professeur.id})}"-->
+<!--             class="btn btn-danger">Delete</a>-->
+<!--        </td>-->
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+</body>
+</html>

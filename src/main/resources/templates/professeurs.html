@@ -1,0 +1,147 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="ISO-8859-1">-->
+<!--    <title>Professeur</title>-->
+<!--    <link rel="stylesheet"-->
+<!--          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"-->
+<!--          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"-->
+<!--          crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container my-2" align="center">-->
+
+<!--    <h3>Professeur List</h3>-->
+<!--    <a th:href="@{/addnew}" class="btn btn-primary btn-sm mb-3" >Ajouter  Professeur</a>-->
+<!--    <table style="width:80%" border="1"-->
+<!--           class = "table table-striped table-responsive-md">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>code</th>-->
+<!--            <th>Nom</th>-->
+<!--            <th>Prenom</th>-->
+<!--            <th>Specialite</th>-->
+<!--            <th>Specification</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="professeur:${listProfs}">-->
+<!--            <td th:text="${professeur.code}"></td>-->
+<!--            <td th:text="${professeur.nom}"></td>-->
+<!--            <td th:text="${professeur.prenom}"></td>-->
+<!--            <td th:text="${professeur.specialite}"></td>-->
+<!--            <td> <a th:href="@{/showFormForUpdate/{id}(id=${professeur.id})}"-->
+<!--                    class="btn btn-primary">Update</a>-->
+<!--                <a th:href="@{/deleteEmployee/{id}(id=${professeur.id})}"-->
+<!--                   class="btn btn-danger">Delete</a>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student Management System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Gestion des notes</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/#}">Back home</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class ="container">
+    <div class = "row">
+        <h1> List de Professeurs </h1>
+    </div>
+
+<!--    <div class = "row">-->
+<!--        <div class = "col-lg-3">-->
+<!--            <a th:href = "@{/students/new}" class = "btn btn-primary btn-sm mb-3"> Add Student</a>-->
+<!--        </div>-->
+<!--    </div>-->
+    <table class = "table table-striped table-bordered">
+        <thead class = "table-dark">
+        <tr>
+            <th>code de Prof </th>
+            <th> Nom</th>
+            <th> Prenom </th>
+            <th> Specialite</th>
+            <th> Options</th>
+        </tr>
+        </thead>
+
+        <tbody>
+             <tr th:each="professeur:${listProfs}">
+                <td th:text="${professeur.code}"></td>
+                <td th:text="${professeur.nom}"></td>
+                <td th:text="${professeur.prenom}"></td>
+                <td th:text="${professeur.specialite}"></td>
+                <td> <a th:href="@{/showFormForUpdate/{id}(id=${professeur.id})}"
+                        class="btn btn-primary">Update</a>
+                    <a th:href="@{/deleteEmployee/{id}(id=${professeur.id})}"
+                       class="btn btn-danger">Delete</a>
+                </td>
+             </tr>
+
+
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
