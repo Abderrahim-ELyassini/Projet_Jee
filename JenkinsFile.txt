@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Récupération du code source') {
+            steps {
+                
+                git 'https://github.com/Abderrahim-ELyassini/Projet_Jee.git'
+            }
+        }
+        stage('Affichage de la date système') {
+            steps {
+                sh 'date' // Exécute la commande 'date' pour afficher la date système
+            }
+        }
+        
+    }
+}
